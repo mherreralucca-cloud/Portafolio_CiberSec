@@ -4,14 +4,14 @@ Antes de ponerse a hacer escaneos contra un servidor, el primer paso en un test 
 
 ## **2. Conceptos Clave de Red**
 En la parte de red, tenemos que tener muy claro que estamos buscando cuando escaneamos un dispositivo.
-* **~ Puerto:** Es una zona donde dos hosts (computadoras) intercambian información.
-* **~ Servicio:** Es el tipo de información que viaja por ese puerto usando alguna utilidad específica, como puede ser SSH o Telnet.
-* **~ Firewall:** Es el filtro que acepta o rechaza el tráfico que entra o sale del dispositivo.
+ ~ Puerto: Es una zona donde dos hosts (computadoras) intercambian información.
+ ~ Servicio: Es el tipo de información que viaja por ese puerto usando alguna utilidad específica, como puede ser SSH o Telnet.
+ ~ Firewall: Es el filtro que acepta o rechaza el tráfico que entra o sale del dispositivo.
 
 Cuando le preguntamos a un puerto cómo está, nos puede devolver tres estados principales:
-* **~ Open:** Podés acceder al puerto y hay un daemon (programa) escuchando del otro lado.
-* **~ Closed:** Podés llegar al puerto, pero no hay ningún servicio funcionando ahí. (Esto igual nos sirve porque nos confirma que hay un sistema Linux vivo en esa IP específica.)
-* **~ Filtered:** El puerto no es accesible. No sabemos si hay un servicio o no, porque un firewall nos está bloqueando el paso y filtrando la conexión.
+ ~ Open: Podés acceder al puerto y hay un daemon (programa) escuchando del otro lado.
+ ~ Closed: Podés llegar al puerto, pero no hay ningún servicio funcionando ahí. (Esto igual nos sirve porque nos confirma que hay un sistema Linux vivo en esa IP específica.)
+ ~ Filtered: El puerto no es accesible. No sabemos si hay un servicio o no, porque un firewall nos está bloqueando el paso y filtrando la conexión.
 
 ## **3. NMAP: El mapeador de redes**
 Acá es donde entra Nmap. Es una herramienta de software libre, gratuita y considerada el escáner de puertos más poderoso. Usa paquetes IP en bruto para ver qué máquinas están vivas en la red, qué servicios ofrecen, qué sistema operativo tienen instalado y qué tipo de firewall usan. Lo usamos para auditorías de seguridad y para juntar información clave antes de lanzar un ataque.
@@ -23,10 +23,10 @@ Después del Footprinting, necesitamos saber que máquinas están activas, porqu
 
 **2. Técnicas de escaneo de puertos:**
 Cuando sabemos que la maquina vive, probamos los puertos:
-* **~ Escaneo TCP SYN (-sS):** Es el que usa Nmap por defecto. Es mas sigiloso porque manda un paquete SYN (intentando iniciar una conexion TCP), pero nunca la termina.
-* **~ Escaneo TCP Connect (-sT):** Si no tienes permisos de administrador, Nmap usa este método. Lo que hace es completar toda la conexión TCP (el saludo de tres vias), pero la desventaja es que al tener éxito la conexión dejas mas registros en el servidor.
-* **~ Escaneo UDP (-sU):** Busca puertos UDP. Es un proceso más lento, pero te salva cuando necesitas descubrir que servicios estan detras de un firewall y usan este protocolo.
-* **~ Escaneo ACK (-sA):** Manda paquetes de reconocimiento (ACK) para ver como responde el sistema, muy util para mapear si un firewall esta filtrando o no esos mensajes.
+ ~ Escaneo TCP SYN (-sS): Es el que usa Nmap por defecto. Es mas sigiloso porque manda un paquete SYN (intentando iniciar una conexion TCP), pero nunca la termina.
+ ~ Escaneo TCP Connect (-sT): Si no tienes permisos de administrador, Nmap usa este método. Lo que hace es completar toda la conexión TCP (el saludo de tres vias), pero la desventaja es que al tener éxito la conexión dejas mas registros en el servidor.
+ ~ Escaneo UDP (-sU): Busca puertos UDP. Es un proceso más lento, pero te salva cuando necesitas descubrir que servicios estan detras de un firewall y usan este protocolo.
+ ~ Escaneo ACK (-sA): Manda paquetes de reconocimiento (ACK) para ver como responde el sistema, muy util para mapear si un firewall esta filtrando o no esos mensajes.
 
 **3. Reconocimiento de S.O (-O):**
 Nmap le tira una serie de paquetes TCP y UDP al host y analiza casi cada bit de cómo responde (cosas como el tamaño de ventana o el ID de IP). Después agarra esos datos y los compara con una base de datos propia que tiene más de 2600 huellas para decirnos exactamente qué SO tiene la máquina.
@@ -39,10 +39,10 @@ Esta es de las funciones más copadas de Nmap. Te permite usar o escribir script
 
 **6. Opciones de uso**
 Para que el escaneo sea a medida y no tardamos una eternidad, solemos combinar varios parámetros en la consola:
-* **~ -p:** Le indicas qué puertos querés revisar. Podés pasarle uno solo (ej. `-p 80`), varios separados por comas, o un rango completo (ej. `-p 1-65535`).
-* **~ -n:** Le decís a Nmap que no pierda tiempo haciendo resoluciones de DNS inversas, lo que hace que el escaneo vaya mucho más rápido.
-* **~ -Pn (o -P0):** Clave para evadir bloqueos. Le avisa a Nmap que no haga el ping inicial y que asuma que la máquina está viva, ideal cuando el firewall del objetivo bloquea los pings.
-* **~ -oN, -oX, -oA:** Son las opciones para guardar la salida del escaneo. Podés guardarlo en texto normal, formato XML, o usar `-oA` para guardarlo en los tres formatos principales a la vez.
+ ~ -p: Le indicas qué puertos querés revisar. Podés pasarle uno solo (ej. `-p 80`), varios separados por comas, o un rango completo (ej. `-p 1-65535`).
+ ~ -n: Le decís a Nmap que no pierda tiempo haciendo resoluciones de DNS inversas, lo que hace que el escaneo vaya mucho más rápido.
+ ~ -Pn (o -P0): Clave para evadir bloqueos. Le avisa a Nmap que no haga el ping inicial y que asuma que la máquina está viva, ideal cuando el firewall del objetivo bloquea los pings.
+ ~ -oN, -oX, -oA: Son las opciones para guardar la salida del escaneo. Podés guardarlo en texto normal, formato XML, o usar `-oA` para guardarlo en los tres formatos principales a la vez.
 
 ---
 
@@ -90,15 +90,15 @@ Conociendo ya como funciona básicamente nmap, podemos hacer combinaciones mas p
 
 **9. Comandos Bonus**
 
-* **~ Evadir el bloqueo de Ping (Host Discovery Disabled)**
+ ~ Evadir el bloqueo de Ping (Host Discovery Disabled)
   * **Comando:** `~ nmap -Pn 192.168.122.107` (también válido como `-P0`).
   * **Para qué sirve:** Muchos administradores configuran el firewall para que ignore los paquetes ICMP (ping) y la máquina parezca "apagada". Este modificador le avisa a Nmap que saltee la prueba inicial, asuma que el servidor está vivo, y vaya a golpear directo a los puertos.    
 
-* **~ Escaneo de puertos UDP**
+ ~ Escaneo de puertos UDP
   * **Comando:** `~ sudo nmap -sU 192.168.122.107`
   * **Para qué sirve:** Por defecto, Nmap solo prueba puertos TCP. Este comando envía paquetes UDP para descubrir servicios que trabajan bajo ese protocolo. Se demora por lo que es más lento, pero asegura no dejar puntos ciegos y permite auditorías mucho más exactas.  
 
-* **~ Fragmentación de paquetes**
+ ~ Fragmentación de paquetes
   * **Comando:** `~ sudo nmap -f 192.168.122.107`
   * **Para qué sirve:** Permite partir los paquetes de red en pedazos muy chicos. Es una técnica de evasión que hace muchísimo más complejo para un firewall lograr hacer el rastreo o detectar que lo estás escaneando.
 
