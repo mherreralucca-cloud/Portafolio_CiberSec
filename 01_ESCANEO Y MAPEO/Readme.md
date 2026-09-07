@@ -102,3 +102,4 @@ Conociendo ya como funciona básicamente nmap, podemos hacer combinaciones mas p
   * **Comando:** `~ sudo nmap -f 192.168.122.107`
   * **Para qué sirve:** Permite partir los paquetes de red en pedazos muy chicos. Es una técnica de evasión que hace muchísimo más complejo para un firewall lograr hacer el rastreo o detectar que lo estás escaneando.
 
+> **Nota:** El desarrollo paso a paso del laboratorio, las capturas de pantalla de las terminales probando NMAP se encuentran documentadas en detalle en el archivo `.pdf` adjunto en esta misma carpeta.
