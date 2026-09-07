@@ -1,4 +1,4 @@
-# 🐧 Portafolio: Administración de Servidores y Servicios en Linux
+# 🔒 Portafolio: Ciberseguridad
 
 ¡Hola! 👋 Soy **Lucca Martinenghi Herrera**, Técnico en Redes de Datos y Telecomunicaciones.
 
@@ -7,10 +7,10 @@ Este repositorio es un portafolio técnico basado en **proyectos reales**, dise�
 Los escenarios aquí presentados son el resultado directo de mi evolución académica y profesional, integrando conocimientos sólidos adquiridos a lo largo de mi carrera:
 
 * 🎓 Mi título ya obtenido como **Técnico en Redes de Datos y Telecomunicaciones**.
-* 🚀 Mis estudios universitarios actuales cursando la **Licenciatura en Redes** y el **Diplomado en Administración de Redes Linux con Orientación en Ciberseguridad** por la UTN, Linux College y el LPI.
+* 🚀 Mis estudios universitarios actuales cursando la **Licenciatura en Redes** y el **Diplomado en Administración de Redes Linux con Orientación en Ciberseguridad** por el Linux College y el LPI.
 
 ##  Objetivo del Repositorio
-El propósito de este espacio es demostrar experiencia práctica y "manos en el teclado" en la instalación, configuración y puesta en marcha de servicios críticos de red operando bajo entornos GNU/Linux (principalmente familia Debian/Ubuntu).
+El propósito de este espacio es demostrar experiencia práctica y "manos en el teclado" en el campo de la ciberseguridad operando bajo entornos GNU/Linux (principalmente familia Debian/Ubuntu).
 
 ---
 
