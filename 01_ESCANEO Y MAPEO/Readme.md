@@ -1,4 +1,4 @@
-👀 # **RESUMEN TEÓRICO Y PRACTICA: FOOTPRINTING, ESCANEO Y MAPEO**
+# **RESUMEN TEÓRICO Y PRACTICA: FOOTPRINTING, ESCANEO Y MAPEO** 
 ## **1. Paso previo: Footprinting**
 Antes de ponerse a hacer escaneos contra un servidor, el primer paso en un test de intrusión es el Footprinting. Basicamente consiste en buscar la información pública que anda dando vueltas sobre nuestro objetivo, ya sea porque la publicaron a propósito o por descuido. Sin tocar directamente al objetivo/empresa, buscamos cosas como direcciones IP, dominios, cuentas de correo o que tipo de servidores usan por ejemplo. Toda esta información es la que nos va a dar la base para saber a dónde apuntar en la fase de escaneo.
 
